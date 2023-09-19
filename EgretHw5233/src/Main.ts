@@ -146,42 +146,40 @@ class Main extends egret.DisplayObjectContainer {
         textfield.x = 172;
         textfield.y = 135;
         this.textfield = textfield;
-
-
-// 首先创建按钮
-this.loginButton = new egret.TextField();
-this.loginButton.text = "登录";
-this.loginButton.textAlign = egret.HorizontalAlign.CENTER; // 设置文本水平居中
-this.loginButton.verticalAlign = egret.VerticalAlign.MIDDLE; // 设置文本垂直居中
-this.loginButton.width = 200; // 设置文本字段宽度
-this.loginButton.height = 50; // 设置文本字段高度
-this.loginButton.touchEnabled = true;
-this.loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginButtonClick, this);
-this.addChild(this.loginButton);
-
-// 计算文本字段位置，使其在舞台中居中
-this.loginButton.x = (this.stage.stageWidth - this.loginButton.width) / 2;
-this.loginButton.y = (this.stage.stageHeight - this.loginButton.height) / 2;
-
-// 接着创建初始化按钮
-this.initButton = new egret.TextField();
-this.initButton.text = "初始化";
-this.initButton.touchEnabled = true;
-this.initButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onInitButtonClick, this);
-// 计算初始化按钮的位置，使其在登录按钮上方 100 像素
-this.initButton.x = (this.stage.stageWidth - this.initButton.width) / 2;
-this.initButton.y = this.loginButton.y - 100;
-this.addChild(this.initButton);
-
-// 最后创建支付按钮
-this.payButton = new egret.TextField();
-this.payButton.text = "支付";
-this.payButton.touchEnabled = true;
-this.payButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPayButtonClick, this);
-// 计算支付按钮的位置，使其在登录按钮下方 100 像素
-this.payButton.x = (this.stage.stageWidth - this.payButton.width) / 2;
-this.payButton.y = this.loginButton.y + 100;
-this.addChild(this.payButton);
+        
+        // 首先创建按钮
+        this.loginButton = new egret.TextField();
+        this.loginButton.text = "登录";
+        this.loginButton.textAlign = egret.HorizontalAlign.CENTER; // 设置文本水平居中
+        this.loginButton.verticalAlign = egret.VerticalAlign.MIDDLE; // 设置文本垂直居中
+        this.loginButton.width = 200; // 设置文本字段宽度
+        this.loginButton.height = 50; // 设置文本字段高度
+        this.loginButton.touchEnabled = true;
+        this.loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginButtonClick, this);
+        this.addChild(this.loginButton);
+        
+        // 计算文本字段位置，使其在舞台中居中
+        this.loginButton.x = (this.stage.stageWidth - this.loginButton.width) / 2;
+        this.loginButton.y = (this.stage.stageHeight - this.loginButton.height) / 2;
+        
+        this.initButton = new egret.TextField();
+        this.initButton.text = "初始化";
+        this.initButton.touchEnabled = true;
+        this.initButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onInitButtonClick, this);
+        // 计算初始化按钮的位置，使其在登录按钮上方 100 像素
+        this.initButton.x = (this.stage.stageWidth - this.initButton.width) / 2;
+        this.initButton.y = this.loginButton.y - 100;
+        this.addChild(this.initButton);
+        
+        this.payButton = new egret.TextField();
+        this.payButton.text = "支付";
+        this.payButton.touchEnabled = true;
+        this.payButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPayButtonClick, this);
+        // 计算支付按钮的位置，使其在登录按钮下方 100 像素
+        this.payButton.x = (this.stage.stageWidth - this.payButton.width) / 2;
+        this.payButton.y = this.loginButton.y + 100;
+        this.addChild(this.payButton);
+        
 
 
 

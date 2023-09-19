@@ -208,7 +208,6 @@ var Main = (function (_super) {
         // 计算文本字段位置，使其在舞台中居中
         this.loginButton.x = (this.stage.stageWidth - this.loginButton.width) / 2;
         this.loginButton.y = (this.stage.stageHeight - this.loginButton.height) / 2;
-        // 接着创建初始化按钮
         this.initButton = new egret.TextField();
         this.initButton.text = "初始化";
         this.initButton.touchEnabled = true;
@@ -217,7 +216,6 @@ var Main = (function (_super) {
         this.initButton.x = (this.stage.stageWidth - this.initButton.width) / 2;
         this.initButton.y = this.loginButton.y - 100;
         this.addChild(this.initButton);
-        // 最后创建支付按钮
         this.payButton = new egret.TextField();
         this.payButton.text = "支付";
         this.payButton.touchEnabled = true;
