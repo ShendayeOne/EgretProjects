@@ -152,13 +152,56 @@ class Main extends eui.UILayer {
         textfield.y = 135;
         this.textfield = textfield;
 
-        let button = new eui.Button();
-        button.label = "Click!";
-        button.horizontalCenter = 0;
-        button.verticalCenter = 0;
-        this.addChild(button);
-        button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+        // let button = new eui.Button();
+        // button.label = "Click!";
+        // button.horizontalCenter = 0;
+        // button.verticalCenter = 0;
+        // this.addChild(button);
+        // button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+
+        const centerX = this.stage.stageWidth / 2;
+        const centerY = this.stage.stageHeight / 2;
+
+        // 初始化按钮
+        let initButton = new eui.Button();
+        initButton.label = "初始化";
+        initButton.x = centerX - initButton.width / 2;
+        initButton.y = centerY - initButton.height / 2 - 100; // 设置垂直间距
+        this.addChild(initButton);
+        initButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onInitButtonClick, this);
+
+        // 登录按钮
+        let loginButton = new eui.Button();
+        loginButton.label = "登录";
+        loginButton.x = centerX - loginButton.width / 2;
+        loginButton.y = centerY - loginButton.height / 2;
+        this.addChild(loginButton);
+        loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginButtonClick, this);
+
+        // 支付按钮
+        let payButton = new eui.Button();
+        payButton.label = "支付";
+        payButton.x = centerX - payButton.width / 2;
+        payButton.y = centerY - payButton.height / 2 + 100; // 设置垂直间距
+        this.addChild(payButton);
+        payButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPayButtonClick, this);
     }
+
+    private onInitButtonClick(e: egret.TouchEvent) {
+        console.log("初始化按钮被点击");
+        // 在这里执行初始化操作
+    }
+    
+    private onLoginButtonClick(e: egret.TouchEvent) {
+        console.log("登录按钮被点击");
+        // 在这里执行登录操作
+    }
+    
+    private onPayButtonClick(e: egret.TouchEvent) {
+        console.log("支付按钮被点击");
+        // 在这里执行支付操作
+    }
+
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
@@ -210,4 +253,6 @@ class Main extends eui.UILayer {
         panel.verticalCenter = 0;
         this.addChild(panel);
     }
+
+    
 }
