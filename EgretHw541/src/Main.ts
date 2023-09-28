@@ -13,8 +13,6 @@ class Main extends egret.DisplayObjectContainer {
     private onAddToStage(event: egret.Event) {
 
         egret.lifecycle.addLifecycleListener((context) => {
-            // custom lifecycle plugin
-
             context.onUpdate = () => {
 
             }
@@ -34,6 +32,14 @@ class Main extends egret.DisplayObjectContainer {
             console.log(e);
         })
 
+    }
+
+
+    private createBitmapByName(name: string) {
+        let result = new egret.Bitmap();
+        let texture: egret.Texture = RES.getRes(name);
+        result.texture = texture;
+        return result;
     }
 
     // 异步地加载资源并创建游戏场
@@ -57,17 +63,6 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     /**
-     * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
-     * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
-     */
-        private createBitmapByName(name: string) {
-            let result = new egret.Bitmap();
-            let texture: egret.Texture = RES.getRes(name);
-            result.texture = texture;
-            return result;
-        }
-
-    /**
      * 创建游戏场景
      * Create a game scene
      */
@@ -83,8 +78,6 @@ class Main extends egret.DisplayObjectContainer {
         this.loginButton.width = 200; // 设置文本字段宽度
         this.loginButton.height = 50; // 设置文本字段高度
         this.loginButton.touchEnabled = true;
-        // this.loginButton.backgroundColor = 0xFFFACD ; 
-        // this.loginButton.textColor = 0xFFFFF0; 
         this.loginButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginButtonClick, this);
         this.addChild(this.loginButton);
         
@@ -127,6 +120,7 @@ class Main extends egret.DisplayObjectContainer {
     private onPayButtonClick(e: egret.TouchEvent) {
         console.log("支付按钮被点击");
         // 在这里执行支付操作
-        
+
     }
+
 }
